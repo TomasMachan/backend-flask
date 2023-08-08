@@ -1,10 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
 
 # set up root route
 @app.route("/")
+def home():
+	return render_template("home.html")
+
+# set up root route
+@app.route("/world")
 def hello_world():
 	return "Hello World"
 
